@@ -8,7 +8,7 @@ use evolun\post\assets\PostAsset;
 /* @var $model evolun\post\models\Post */
 
 $this->title = $model->title;
-$this->params['breadcrumbs'][] = ['label' => 'Információk', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('post', 'Posts'), 'url' => ['index']];
 $this->params['pageHeader'] = ['title' => $this->title];
 $this->params['breadcrumbs'][] = $this->title;
 
@@ -25,7 +25,7 @@ PostAsset::register($this);
              <!-- Profile Image -->
             <div class="box box-default">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Tulajdonságok</h3>
+                    <h3 class="box-title"><?= Yii::t('post', 'About this post') ?></h3>
                 </div>
 
                 <div class="box-body">
@@ -52,27 +52,27 @@ PostAsset::register($this);
                             <?php if (!empty($model->role)): ?>
                                 <span class="pull-right"><?= Yii::$app->authManager->getRole($model->role)->description ?></span>
                             <?php else: ?>
-                                <span class="pull-right">Mindenki</span>
+                                <span class="pull-right"><?= Yii::t('post', 'Everybody') ?></span>
                             <?php endif ?>
                         </li>
                     </ul>
                     <?php if (Yii::$app->user->can('managePosts')): ?>
                         <div class="row">
                             <div class="col-xs-6">
-                                <p><?= Html::a('<i class="fa fa-pencil"></i> Módosítás', ['update', 'id' => $model->id], ['class' => 'btn btn-primary btn-block']) ?></p>
+                                <p><?= Html::a('<i class="fa fa-pencil"></i> ' . Yii::t('post', 'Update'), ['update', 'id' => $model->id], ['class' => 'btn btn-primary btn-block']) ?></p>
                             </div>
                             <div class="col-xs-6">
-                                <p><?= Html::a('<i class="fa fa-trash"></i> Törlés', ['delete', 'id' => $model->id], ['class' => 'btn btn-danger btn-block', 'data-confirm' => 'Biztosan törlöd ezt a bejegyzést? Minden hozzá tartozó adat törlődni fog!']) ?></p>
+                                <p><?= Html::a('<i class="fa fa-trash"></i> ' . Yii::t('post', 'Delete'), ['delete', 'id' => $model->id], ['class' => 'btn btn-danger btn-block', 'data-confirm' => Yii::t('post', 'Are you sure?')]) ?></p>
                             </div>
                         </div>
                     <?php endif ?>
 
                     <div class="row">
                         <div class="col-xs-6">
-                            <?= Html::a('<i class="fa fa-print"></i> Nyomtatás', ['print', 'id' => $model->id], ['class' => 'btn btn-primary btn-block', 'target' => '_blank']) ?>
+                            <?= Html::a('<i class="fa fa-print"></i> ' . Yii::t('post', 'Print'), ['print', 'id' => $model->id], ['class' => 'btn btn-primary btn-block', 'target' => '_blank']) ?>
                         </div>
                         <div class="col-xs-6">
-                            <?= Html::a('<i class="fa fa-download"></i> Letöltés', ['download', 'id' => $model->id], ['class' => 'btn btn-primary btn-block']) ?>
+                            <?= Html::a('<i class="fa fa-download"></i> ' . Yii::t('post', 'Download'), ['download', 'id' => $model->id], ['class' => 'btn btn-primary btn-block']) ?>
                         </div>
                     </div>
                 </div>

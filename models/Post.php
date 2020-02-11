@@ -64,7 +64,7 @@ class Post extends \yii\db\ActiveRecord
     public function roleValidation($attribute, $params)
     {
         if (Yii::$app->authManager->getRole($this->role) === null) {
-            $this->addError($attribute, 'Nem létező jogosultsági kör!');
+            $this->addError($attribute, Yii::t('post', 'There are no rule with this name'));
         }
     }
 
@@ -74,15 +74,14 @@ class Post extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'title' => 'Cím',
-            'lead' => 'Leírás',
-            'content' => 'Tartalom',
-            'created_at' => 'Létrehozva',
-            'updated_at' => 'Utoljára módosítva',
-            'created_by' => 'Létrehozta',
-            'updated_by' => 'Módosította',
-            'role' => 'Láthatóság',
+            'title' => Yii::t('post', 'Title'),
+            'lead' => Yii::t('post', 'Lead'),
+            'content' => Yii::t('post', 'Content'),
+            'created_at' => Yii::t('post', 'Created at'),
+            'updated_at' => Yii::t('post', 'Updated at'),
+            'created_by' => Yii::t('post', 'Created by'),
+            'updated_by' => Yii::t('post', 'Updated by'),
+            'role' => Yii::t('post', 'Role'),
         ];
     }
 

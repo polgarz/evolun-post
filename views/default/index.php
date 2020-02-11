@@ -8,7 +8,7 @@ use yii\bootstrap\ActiveForm;
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Információk';
+$this->title = Yii::t('post', 'Posts');
 $this->params['pageHeader'] = ['title' => $this->title];
 $this->params['breadcrumbs'][] = $this->title;
 ?>

@@ -34,11 +34,6 @@ class PostSearch extends Post
         return Model::scenarios();
     }
 
-    public function attributeLabels()
-    {
-        //
-    }
-
     /**
      * Creates data provider instance with search query applied
      *

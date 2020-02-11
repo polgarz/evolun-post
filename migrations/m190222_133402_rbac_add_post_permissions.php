@@ -12,11 +12,11 @@ class m190222_133402_rbac_add_post_permissions extends Migration
         $auth = Yii::$app->authManager;
 
         $managePosts = $auth->createPermission('managePosts');
-        $managePosts->description = 'Bejegyzések szerkesztése';
+        $managePosts->description = 'Can edit posts';
         $auth->add($managePosts);
 
         $showPosts = $auth->createPermission('showPosts');
-        $showPosts->description = 'Bejegyzések megtekintése';
+        $showPosts->description = 'Can show posts';
         $auth->add($showPosts);
 
         $admin = $auth->getRole('admin');
