@@ -1,0 +1,33 @@
+{
+    "name": "polgarz/evolun-post",
+    "description": "Post extension for Evolun",
+    "keywords": ["evolun", "post", "volunteering system", "volunteering", "volunteer"],
+    "type": "evolun-extension",
+    "license": "BSD-3-Clause",
+    "support": {
+        "issues": "https://github.com/polgarz/evolun-post/issues",
+        "source": "https://github.com/polgarz/evolun-post"
+    },
+    "authors": [
+        {
+            "name": "Polgar Zoltan",
+            "email": "pzoltan@pzoltan.hu",
+            "homepage": "https://www.evolun.hu/"
+        }
+    ],
+    "require": {
+        "kartik-v/yii2-mpdf": "@dev",
+        "yiisoft/yii2-bootstrap": "~2.0.0"
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "evolun\\post\\": ""
+        }
+    }
+}
