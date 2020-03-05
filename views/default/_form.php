@@ -24,7 +24,7 @@ PostAsset::register($this);
 
         <?= $form->field($model, 'content')->textarea(['rows' => 6, 'id' => 'summernote']) ?>
 
-        <?= $form->field($model, 'role')->dropdownList(ArrayHelper::map(Yii::$app->authmanager->getChildRoles(Yii::$app->user->identity->role), 'name', 'description'), ['prompt' => Yii::t('post', 'Everybody')])->hint(Yii::t('post', 'If the user is lower in the role-hierarchy, they will not be able to see this post')) ?>
+        <?= $form->field($model, 'role')->dropdownList(ArrayHelper::map(Yii::$app->authmanager->getChildRoles(Yii::$app->user->identity->role), 'name', 'name'), ['prompt' => Yii::t('post', 'Everybody')])->hint(Yii::t('post', 'If the user is lower in the role-hierarchy, they will not be able to see this post')) ?>
 
         <div class="form-group">
             <?= Html::submitButton(Yii::t('post', 'Save'), ['class' => 'btn btn-success']) ?>
