@@ -22,7 +22,6 @@ class m190222_133402_rbac_add_post_permissions extends Migration
         $admin = $auth->getRole('admin');
         $auth->addChild($admin, $showPosts);
         $auth->addChild($admin, $managePosts);
-
     }
 
     /**

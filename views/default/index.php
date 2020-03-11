@@ -32,7 +32,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 [
                     'attribute' => 'title',
                     'format' => 'raw',
-                    'value' => function($model) {
+                    'value' => function ($model) {
                         return Html::a($model->title, ['view', 'id' => $model->id], ['class' => 'col-link text-default']);
                     },
                 ],
